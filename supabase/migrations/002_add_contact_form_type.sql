@@ -1,0 +1,1 @@
+alter type public.form_type add value if not exists 'contact';

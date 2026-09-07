@@ -1,0 +1,137 @@
+@import "tailwindcss";
+:root {
+    --ink: #0f1b2e;
+    /* deep navy - authority */
+    --indigo: #1c3a5e;
+    /* royal indigo - secondary */
+    --indigo-light: #2f537f;
+    --gold: #c8992a;
+    /* covenant gold - accent */
+    --gold-light: #e0b94f;
+    --parchment: #f6f2e7;
+    /* warm parchment bg */
+    --parchment-dim: #efe8d6;
+    --charcoal: #24242a;
+    --line: #d9cfb3;
+    --font-fraunces: "Georgia", "Times New Roman", serif;
+    --font-inter: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+@theme inline {
+    --color-ink: var(--ink);
+    --color-indigo: var(--indigo);
+    --color-indigo-light: var(--indigo-light);
+    --color-gold: var(--gold);
+    --color-gold-light: var(--gold-light);
+    --color-parchment: var(--parchment);
+    --color-parchment-dim: var(--parchment-dim);
+    --color-charcoal: var(--charcoal);
+    --color-line: var(--line);
+    --font-display: var(--font-fraunces);
+    --font-body: var(--font-inter);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--parchment);
+    color: var(--charcoal);
+    font-family: var(--font-body), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+    font-family: var(--font-display), Georgia, serif;
+}
+
+::selection {
+    background: var(--gold);
+    color: var(--ink);
+}
+
+
+/* Covenant seal — signature motif used as section markers */
+
+.seal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.hairline {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--line), transparent);
+}
+
+.copy-btn {
+    transition: transform 0.15s ease;
+}
+
+.copy-btn:active {
+    transform: scale(0.94);
+}
+
+@keyframes blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    50.01%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* Pinterest-style masonry via CSS columns */
+
+.masonry {
+    column-count: 1;
+    column-gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .masonry {
+        column-count: 3;
+    }
+}
+
+.masonry>* {
+    break-inside: avoid;
+    margin-bottom: 1.25rem;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
