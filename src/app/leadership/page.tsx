@@ -2,6 +2,8 @@ import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import Accordion, { type AccordionSection } from "@/components/Accordion";
 import { leadershipData } from "@/data/mock";
+import president from "../../assets/clmiFounder.jpeg";
+
 
 function PersonCard({ name, role, image }: { name: string; role: string; image: string }) {
   return (
@@ -23,7 +25,7 @@ const sections: AccordionSection[] = [
     title: "President / Founder",
     content: (
       <div className="grid gap-8 sm:grid-cols-[240px_1fr]">
-        <PersonCard name={leadershipData.president.name} role={leadershipData.president.title} image={leadershipData.president.image} />
+        <PersonCard name={leadershipData.president.name} role={leadershipData.president.title} image={president} />
         <div className="space-y-4">
           {leadershipData.president.bio.map((p) => (
             <p key={p}>{p}</p>

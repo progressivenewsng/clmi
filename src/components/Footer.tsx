@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import logo from "../assets/logo.png";
 
 const socials = [
   { label: "Facebook", href: "https://www.facebook.com/share/1CEQYMmq9W/?mibextid=wwXIfr", icon: "M13 22V12h3l1-4h-4V6c0-1.1.4-2 2-2h2V0h-3c-3 0-5 2-5 5.5V8H6v4h3v10h4Z" },
@@ -38,7 +39,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
           <div className="flex items-center gap-3">
-            <Image src="/clmi-logo.jpeg" alt="CLMI logo" width={48} height={48} className="rounded-full bg-white" />
+            <Image src={logo} alt="CLMI logo" width={48} height={48} className="rounded-full" />
             <div className="font-display text-sm font-semibold text-parchment">
               CLMI
               <span className="block text-[10px] font-body font-normal tracking-[0.2em] text-gold-light">

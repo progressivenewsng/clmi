@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import logo from "../assets/logo.png";
 
 type NavChild = { label: string; href: string };
 type NavItem = { label: string; href?: string; children?: NavChild[] };
@@ -101,11 +102,11 @@ export default function Navbar() {
       <div className="mx-auto flex  items-center justify-between px-5 py-3 lg:px-8">
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <Image
-            src="/clmi-logo.jpeg"
+            src={logo}
             alt="CLMI logo"
             width={70}
             height={70}
-            className="rounded-full bg-white"
+            className="rounded-full "
           />
           <span className="hidden font-display text-[15px] font-semibold tracking-wide text-parchment sm:block">
             COVENANT LEADERSHIP
