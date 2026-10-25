@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import PageHero from "@/components/PageHero";
 import Accordion, { type AccordionSection } from "@/components/Accordion";
 import { leadershipData } from "@/data/mock";
 import president from "../../assets/clmiFounder.jpeg";
 
 
-function PersonCard({ name, role, image }: { name: string; role: string; image: string }) {
+function PersonCard({ name, role, image }: { name: string; role: string; image: string | StaticImageData }) {
   return (
     <div className="group">
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-indigo">
