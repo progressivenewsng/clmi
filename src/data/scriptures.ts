@@ -25,8 +25,8 @@ export const scriptures: Scripture[] = [
   { reference: "Matthew 28:18", theme: "Commission", text: "And Jesus came and spake unto them, saying, All power is given unto me in heaven and in earth." },
   { reference: "Isaiah 9:6", theme: "The promised King", text: "For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder: and his name shall be called Wonderful, Counseller, The mighty God, The everlasting Father, The Prince of Peace." },
   { reference: "Proverbs 10:22", theme: "Blessing", text: "The blessing of the LORD, it maketh rich, and he addeth no sorrow with it." },
-  { reference: "Daniel 7:27", text: "And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the most High, whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him." },
-  { reference: "Isaiah 8:20", text: "To the law and to the testimony: if they speak not according to this word, it is because there is no light in them." },
-  { reference: "Luke 22:29", text: "And I appoint unto you a kingdom, as my Father hath appointed unto me;" },
-  { reference: "Jer 30:21", text: "And their nobles shall be of themselves, and their governor shall proceed from the midst of them; and I will cause him to draw near, and he shall approach unto me: for who is this that engaged his heart to approach unto me? saith the LORD." },
+  { reference: "Daniel 7:27", theme: "Everlasting kingdom", text: "And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the most High, whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him." },
+  { reference: "Isaiah 8:20", theme: "Scriptural foundation", text: "To the law and to the testimony: if they speak not according to this word, it is because there is no light in them." },
+  { reference: "Luke 22:29", theme: "Kingdom appointment", text: "And I appoint unto you a kingdom, as my Father hath appointed unto me;" },
+  { reference: "Jer 30:21", theme: "Called to lead", text: "And their nobles shall be of themselves, and their governor shall proceed from the midst of them; and I will cause him to draw near, and he shall approach unto me: for who is this that engaged his heart to approach unto me? saith the LORD." },
 ];

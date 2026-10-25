@@ -248,6 +248,12 @@ export const reviews: Review[] = [
   },
 ];
 
+type LeadershipPerson = {
+  name: string;
+  role: string;
+  image: string;
+};
+
 export const leadershipData = {
   president: {
     name: "Folorunso S. Aluko",
@@ -258,12 +264,8 @@ export const leadershipData = {
       "Also, he is an Associate Pastor with Living Faith Church. He is passionate about soul-winning, spiritual growth, leadership development and advancing God's Kingdom. He is happily married and blessed with three lovely children.",
     ],
   },
-  executiveCouncil: [
-    
-  ],
-  directors: [
-   
-  ],
+  executiveCouncil: [] as LeadershipPerson[],
+  directors: [] as LeadershipPerson[],
 };
 
 export const ministries = {
