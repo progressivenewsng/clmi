@@ -62,7 +62,7 @@ export default function DonatePage() {
               </p>
               <a href="tel:+2348023456789" className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-gold-light hover:text-parchment">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3c0 6 5 11 11 11l2-3-4-2-1 1c-2-1-3-2-4-4l1-1-2-4-3 0Z" stroke="currentColor" strokeWidth="1.2" /></svg>
-                +234 802 345 6789
+                +234 707 309 2948, +234 705 892 4014
               </a>
             </div>
             <div className="border border-line bg-white/40 p-6 text-[13px] leading-relaxed text-charcoal/65">

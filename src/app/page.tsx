@@ -8,6 +8,7 @@ import { getPublishedReviews } from "@/lib/content/public";
 
 export default async function Home() {
   const [publications, reviews] = await Promise.all([getPublishedPublications(), getPublishedReviews()]);
+  const reversedPublications = [...publications].reverse();
   return (
     <>
       {/* HERO */}
@@ -19,50 +20,37 @@ export default async function Home() {
               "radial-gradient(circle at 15% 25%, var(--gold) 0, transparent 40%), radial-gradient(circle at 85% 75%, var(--gold) 0, transparent 35%)",
           }}
         />
-        <div className="relative mx-auto grid max-w-7xl lg:items-start items-center gap-14 px-6 pb-20 pt-10 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pb-28 ">
-          <div>
-            <p className="flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.3em] text-gold-light">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-5 pb-14 pt-8 sm:gap-12 sm:px-6 sm:pb-16 sm:pt-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-14 lg:px-8 lg:pb-28 lg:pt-12">
+          <div className="min-w-0">
+            <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-gold-light sm:text-[12px]">
               <span className="h-px w-8 bg-gold" /> Covenant Leadership Ministry International
             </p>
-            <h1 className="mt-6 font-display text-[2.6rem] font-semibold leading-[1.08] text-parchment sm:text-6xl">
+            <h1 className="mt-5 font-display text-[2rem] font-semibold leading-[1.1] text-parchment sm:text-[2.6rem] md:text-5xl lg:text-6xl">
               Raising Kingdom
               <br /> <span className="italic text-gold-light">leaders.</span>
             </h1>
-            <p className="mt-6 max-w-lg text-[16px] leading-relaxed text-parchment/70">
-              CLMI reconciles leaders and politicians in both
-              private and public office to God, through a deeper understanding of their calling and
-              the application of His word to practical leadership realities.
+            <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-parchment/70 sm:mt-6 sm:text-[16px]">
+              Covenant Leadership Ministry International (CLMI) also known as Believers in Politics (BiP)is a non-denominational platform aimed at reconciling leaders in both private and public sector to God through a deeper understanding of their calling and Gods agenda and application of the word of god to practical leadership realities.
             </p>
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-3 sm:mt-9 sm:gap-4">
               <Link
                 href="/join"
-                className="bg-gold px-7 py-3.5 text-[13px] font-semibold uppercase tracking-widest text-ink transition-colors hover:bg-gold-light"
+                className="bg-gold px-6 py-3 text-[12px] font-semibold uppercase tracking-widest text-ink transition-colors hover:bg-gold-light sm:px-7 sm:py-3.5 sm:text-[13px]"
               >
                 Join CLMI
               </Link>
               <Link
                 href="/about"
-                className="border border-parchment/30 px-7 py-3.5 text-[13px] font-semibold uppercase tracking-widest text-parchment transition-colors hover:border-gold hover:text-gold-light"
+                className="border border-parchment/30 px-6 py-3 text-[12px] font-semibold uppercase tracking-widest text-parchment transition-colors hover:border-gold hover:text-gold-light sm:px-7 sm:py-3.5 sm:text-[13px]"
               >
                 Discover Who We Are
               </Link>
             </div>
-            <div className="mt-14 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
-              {[
-                ["Seminars", "Leadership Develoment"],
-                ["BIP", "Believers in Politics Confrences"],
-                ["Outreach", "Targeted Community Engagement and community-focused projects"],
-              ].map(([n, l]) => (
-                <div key={n}>
-                  <div className="font-display text-xl font-semibold text-gold-light">{n}</div>
-                  <div className="mt-1 text-[12px] leading-snug text-parchment/55">{l}</div>
-                </div>
-              ))}
-            </div>
+
           </div>
 
-          <div className="relative mx-auto w-full max-w-[34rem]">
-            <div className="absolute -inset-6 rounded-[2rem] border border-gold/30 bg-gold/5 blur-3xl" />
+          <div className="relative mx-auto min-w-0 w-full max-w-xl lg:max-w-[34rem]">
+            <div className="absolute -inset-3 rounded-[2rem] border border-gold/30 bg-gold/5 blur-3xl sm:-inset-5" />
             <VerseCarousel />
           </div>
         </div>
@@ -91,22 +79,20 @@ export default async function Home() {
           </div>
           <div>
             <p className="text-[12px] font-semibold uppercase tracking-[0.3em] text-indigo">A Word From Our President</p>
-            <h2 className="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
-              &ldquo;Every leader carries an assignment before they carry a title.&rdquo;
-            </h2>
             <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-charcoal/80">
               <p>
-                Beloved, it is with great joy that I welcome you into the fellowship of Covenant Leadership
-                Ministry International. We are not a church, but a covenant platform raised to reconcile
-                leaders and politicians — in both the private and public sector — to God&rsquo;s agenda for
-                their calling.
+                Welcome to Covenant Leadership Ministry International (CLMI), also known as Believers in Politics (BiP), a divine platform committed to reconciling leaders in the public and private sectors, including politicians, to God through a deeper understanding of their calling, His divine agenda, and the practical application of His Word to leadership and governance.
+                At CLMI, we believe that leadership is more than a position of authority; it is a divine responsibility and an opportunity to fulfil God's purpose on earth. Our vision is to see men and women in positions of influence become instruments of righteousness, integrity, excellence, justice, and transformation in their spheres of leadership. We are committed to raising spiritually grounded leaders who will allow biblical principles to shape their decisions, relationships, policies, and service to humanity.
+                We recognise the Church of Jesus Christ as God's established institution for spiritual growth, discipleship, and the nurturing of believers. Therefore, CLMI is not a church, does not seek to establish one, and has no denominational or political ambition. Rather, we exist to complement the work of existing churches, support their soul-winning efforts, and encourage our members to remain committed and active in their respective congregations. Every soul won through our outreaches is encouraged to become established in a Bible-believing church, where they can continue to grow in faith and fulfil their Christian calling.
+                Our mission is anchored in the conviction that the principles of God's Kingdom must find practical expression in leadership, public service, business, politics, and every sphere of human endeavour. We seek to equip leaders to understand that their positions are opportunities to serve God and humanity, promote the common good, and advance values that strengthen individuals, institutions, and nations.
+                Through our monthly fellowships, public lectures, national leadership convention, and international leadership convention, we provide opportunities for spiritual edification, leadership development, fellowship, and the exchange of ideas on applying God's Word to contemporary leadership challenges. We welcome men and women who desire to align their leadership journeys with God's purposes and make a lasting, positive impact on their generation.
+                As we pursue this vision, we encourage every member to remain faithful to their local church, honour God with their resources, and embrace a life of service, accountability, and spiritual maturity. CLMI does not collect tithes; members are encouraged to pay their tithes to their respective churches. Any voluntary offering or partnership support to CLMI is additional to their regular church giving.
+                My prayer is that, through this ministry, God will raise a generation of leaders who are spiritually mature, intellectually equipped, morally upright, and courageous enough to represent His Kingdom wherever they are called to serve.
+                Together, let us pursue God's agenda for leadership, contribute to the transformation of our society, and fulfil our responsibility as ambassadors of Christ.
+                Welcome to CLMI—where faith meets leadership, purpose inspires service, and saints are raised to be kings.
+
               </p>
-              <p>
-                If you carry influence in a boardroom, a chamber, a ministry office or a community, this
-                ministry exists for you. Here you will find teaching, fellowship and a community of leaders
-                pursuing scriptural correctness as a way of governance and life.
-              </p>
-              <p>We look forward to walking this journey with you, as we raise saints to be kings.</p>
+              
             </div>
             <p className="mt-8 font-display text-xl italic text-ink">— {leadershipData.president.name}</p>
             <Link
@@ -164,7 +150,7 @@ export default async function Home() {
 
           <div className="mt-12">
             <Carousel>
-              {publications.map((p) => (
+              {reversedPublications.map((p) => (
                 <Link
                   key={p.slug}
                   href={`/publications/${p.slug}`}
@@ -180,7 +166,6 @@ export default async function Home() {
                     />
                   </div>
                   <div className="mt-4">
-                    <div className="text-[11px] uppercase tracking-widest text-indigo/70">{p.date}</div>
                     <h3 className="mt-2 font-display text-lg font-semibold text-ink group-hover:text-indigo">
                       {p.title}
                     </h3>

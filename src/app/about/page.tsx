@@ -8,31 +8,9 @@ const sections: AccordionSection[] = [
     content: (
       <div className="space-y-4">
         <p>
-          Covenant Leadership Ministry International (CLMI), also known as Believers in Politics (BiP), is a
-          non-denominational platform aimed at reconciling leaders in both the private and public sector, and
-          politicians, to God through a deeper understanding of their calling and God&rsquo;s agenda — and the
-          application of the word of God to practical leadership realities.
+          Covenant Leadership Ministry International (CLMI) also known as Believers in Politics (BiP)is a non-denominational platform aimed at reconciling leaders in both private and public sector to God through a deeper understanding of their calling and Gods agenda and application of the word of god to practical leadership realities. CLMI is to service all churches of Christ and not to plant a church. It will encourage its members to grow and be more dedicated to the service of God in their churches. New converts to Christ through any of CLMI outreaches and activities would be encouraged to attend any of the existing churches of Christ. CLMI does not have any political ambition but to support existing churches, complement the efforts of these churches to win souls for Christ and to establish such souls in their churches. CLMI is not in any competition with the church of Christ either locally, denominationally or internationally but rather to join in the fulfilment of the end-time agenda of God. CLMI is committed to raising saints to be kings. CLMI is not to collect tithes as all members are to pay their tithes to their churches. Whatever offering or partnership donations made to CLMI is voluntary and in excess of their regular offering and tithe to their church. CLMI holds monthly fellowship across all the major towns and cities across all nations of the world. This fellowship meetings hold every third Sundays of the month 5 – 7 pm. Also, CLMI holds biannual public lecture every second and last quarer of the year, one national leadership convention holds third quarter of the year and biennal International Leadership convention.
         </p>
-        <p>
-          CLMI exists to service all churches of Christ, not to plant a church. It encourages members to grow
-          and be more dedicated to the service of God in their own churches. New converts to Christ through
-          any CLMI outreach or activity are encouraged to join an existing church of Christ.
-        </p>
-        <p>
-          CLMI has no political ambition. Its role is to support existing churches and complement their
-          efforts to win souls for Christ and establish those souls within their churches — joining, not
-          competing, in the fulfilment of God&rsquo;s end-time agenda.
-        </p>
-        <p>
-          CLMI does not collect tithes; members pay tithes to their own churches. Offerings and partnership
-          donations to CLMI are entirely voluntary and in excess of a member&rsquo;s regular giving.
-        </p>
-        <p>
-          CLMI holds monthly fellowship across major towns and cities in every nation it is present, every
-          third Sunday of the month, 5–7pm. It also holds a biannual public lecture (second and last quarter
-          of the year), a National Leadership Convention (third quarter), and a biennial International
-          Leadership Convention.
-        </p>
+       
       </div>
     ),
   },
@@ -42,14 +20,10 @@ const sections: AccordionSection[] = [
     content: (
       <div className="space-y-4">
         <p>
-          <span className="font-semibold text-ink">Vision —</span> A generation of leaders and politicians,
-          across every sector and every nation, governing from a full understanding of their calling as an
-          assignment from God.
+          <span className="font-semibold text-ink">Vision Statement—</span> To raise a generation of spiritually grounded, purpose-driven, and transformational leaders in the public and private sectors who understand their divine calling, embody the principles of God's Kingdom, and influence society through godly leadership, integrity, excellence, and service—raising saints to be kings and advancing God's end-time agenda.
         </p>
         <p>
-          <span className="font-semibold text-ink">Mission —</span> To reconcile leaders and politicians to
-          God by teaching, fellowship and practical application of scripture to leadership realities — raising
-          saints to be kings.
+          <span className="font-semibold text-ink">Mission Statement—</span> Covenant Leadership Ministry International (CLMI), also known as Believers in Politics (BiP), exists to reconcile leaders in politics, government, business, and other spheres of influence to God through the teaching and practical application of His Word to leadership and governance.
         </p>
       </div>
     ),
@@ -91,20 +65,12 @@ const sections: AccordionSection[] = [
     title: "Aims & Objectives",
     content: (
       <ul className="list-disc space-y-3 pl-5 marker:text-gold">
-        <li>Provide a basis for Christian fellowship among all leaders and politicians everywhere, through a platform not attached to any single church but drawing from all churches of Christ — servicing existing churches rather than starting one.</li>
-        <li>Embark on evangelical outreaches and programmes worldwide to win souls for Christ, particularly those in positions of power and authority, preparing them for the second coming of our Lord Jesus Christ.</li>
-        <li>Organise meetings, prayer sessions and fellowship for the promotion of the Kingdom of God on earth.</li>
-        <li>Reconcile all men with God and promote the sustenance of fellowship between them.</li>
-        <li>Organise teachings, trainings, seminars, public lectures and conventions to facilitate the understanding and application of the word of God to life realities and societal issues.</li>
-        <li>Publish Christian literature — books, tracts, magazines, periodicals, journals and more — in line with our aims and objectives.</li>
-        <li>Provide opportunity for leaders and politicians to fellowship and discuss practical realities in their call, identifying how to apply scriptural principles and solutions to them.</li>
-        <li>Bring to clear perspective the limitless applicability of the word of God to practical politics, demonstrating God&rsquo;s plan and agenda for the politics of men and nations.</li>
-        <li>Broadcast and advertise CLMI programmes and beliefs through all media.</li>
-        <li>Promote mutual understanding, love and unity among men.</li>
-        <li>Promote and propagate the participation of more Christians — old and young — in politics.</li>
-        <li>Promote help, charity and support towards all people across nations.</li>
-        <li>Intercede for Nigeria.</li>
-        <li>Undertake all other lawful things that promote the Kingdom of God and the ministry&rsquo;s objectives.</li>
+        <li>Reconnecting Leaders to God: Helping leaders discover their divine calling, understand God's agenda, and fulfil their leadership responsibilities according to biblical principles.</li>
+        <li>Promoting Godly Leadership: Equipping leaders with the spiritual, moral, and practical values necessary to lead with integrity, wisdom, accountability, excellence, and a spirit of service.</li>
+        <li>Supporting the Church of Christ: Complementing the work of existing churches in evangelism, discipleship, and soul-winning, while encouraging members to remain active and committed to their respective local churches.</li>
+        <li>Raising Kingdom Ambassadors: Developing spiritually mature believers who will represent Christ effectively and influence politics, governance, business, and society for the advancement of God's Kingdom.</li>
+        <li>Fostering Leadership Development: Providing platforms for fellowship, public lectures, leadership conventions, and capacity development that connect biblical truth with contemporary leadership challenges.</li>
+        <li>Advancing God's End-Time Agenda: Partnering with the wider Body of Christ, without denominational competition or partisan political ambition, to establish believers in the faith and promote God's purposes in every sphere of human endeavour.</li>
       </ul>
     ),
   },

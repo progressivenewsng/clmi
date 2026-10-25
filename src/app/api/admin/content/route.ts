@@ -1,4 +1,5 @@
 import { createAdminClient } from "@/lib/supabase/admin";
+import { requireRole } from "@/lib/auth";
 
 const types = {
   news: { table: "news_items", folder: "news", title: "News", needsSlug: true },
@@ -26,7 +27,7 @@ async function upload(file: FormDataEntryValue | null, folder: string) {
 }
 
 export async function POST(request: Request) {
-  if (process.env.NODE_ENV === "production") return Response.json({ error: "Unavailable" }, { status: 404 });
+  await requireRole(["editor", "admin"]);
   const form = await request.formData();
   const contentType = form.get("contentType");
   if (typeof contentType !== "string" || !(contentType in types)) return Response.json({ error: "Invalid content type." }, { status: 400 });
@@ -60,7 +61,7 @@ export async function POST(request: Request) {
 }
 
 export async function PATCH(request: Request) {
-  if (process.env.NODE_ENV === "production") return Response.json({ error: "Unavailable" }, { status: 404 });
+  await requireRole(["editor", "admin"]);
   const payload = await request.json();
   const contentType = payload.contentType;
   const config = types[contentType as ContentType];
@@ -74,7 +75,7 @@ export async function PATCH(request: Request) {
 }
 
 export async function DELETE(request: Request) {
-  if (process.env.NODE_ENV === "production") return Response.json({ error: "Unavailable" }, { status: 404 });
+  await requireRole(["editor", "admin"]);
   const payload = await request.json();
   const config = types[payload.contentType as ContentType];
   const id = typeof payload.id === "string" ? payload.id : "";

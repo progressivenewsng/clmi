@@ -37,7 +37,7 @@ function createSections(publications: Awaited<ReturnType<typeof getPublishedPubl
 
 export default async function PublicationsPage() {
   const publications = await getPublishedPublications();
-  const sections = createSections(publications);
+  const sections = createSections([...publications].reverse());
   return (
     <>
       <PageHero

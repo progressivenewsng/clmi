@@ -1,4 +1,5 @@
 import { createAdminClient } from "@/lib/supabase/admin";
+import { requireRole } from "@/lib/auth";
 
 export const runtime = "nodejs";
 
@@ -60,9 +61,7 @@ async function uploadPdf(file: FormDataEntryValue | null) {
 }
 
 export async function POST(request: Request) {
-  if (process.env.NODE_ENV === "production") {
-    return Response.json({ error: "Unavailable" }, { status: 404 });
-  }
+  await requireRole(["editor", "admin"]);
 
   const payload = await request.formData();
   const title = typeof payload.get("title") === "string" ? String(payload.get("title")).trim() : "";
@@ -96,9 +95,7 @@ export async function POST(request: Request) {
 }
 
 export async function PATCH(request: Request) {
-  if (process.env.NODE_ENV === "production") {
-    return Response.json({ error: "Unavailable" }, { status: 404 });
-  }
+  await requireRole(["editor", "admin"]);
 
   const payload = await request.json();
   const id = typeof payload.id === "string" ? payload.id : "";
@@ -122,7 +119,7 @@ export async function PATCH(request: Request) {
 }
 
 export async function DELETE(request: Request) {
-  if (process.env.NODE_ENV === "production") return Response.json({ error: "Unavailable" }, { status: 404 });
+  await requireRole(["editor", "admin"]);
   const { id } = await request.json();
   if (typeof id !== "string" || !id) return Response.json({ error: "A publication id is required." }, { status: 400 });
   const supabase = createAdminClient();

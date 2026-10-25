@@ -12,7 +12,7 @@ type Verse = {
 const verses: Verse[] = scriptures.map((scripture, index) => ({
   text: scripture.text,
   reference: scripture.reference,
-  style: `font-display text-[1.35rem] leading-[1.3] ${index % 2 ? "text-gold-light" : "text-parchment"} sm:text-[1.7rem]`,
+  style: `font-display text-lg leading-relaxed break-words ${index % 2 ? "text-gold-light" : "text-parchment"} sm:text-xl`,
 }));
 
 const typeDelay = 45;
@@ -65,18 +65,18 @@ export default function VerseCarousel() {
   }, [activeIndex, activeVerse.text]);
 
   return (
-    <div className="relative mx-auto w-full max-w-[34rem]">
-      <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_30px_70px_rgba(0,0,0,0.4)] backdrop-blur-sm sm:p-8">
-        <div className="mb-5 flex items-center justify-between gap-3">
-          <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold-light">
+    <div className="relative mx-auto min-w-0 w-full max-w-[34rem]">
+      <div className="relative rounded-2xl border border-white/10 bg-white/5 p-5 shadow-[0_30px_70px_rgba(0,0,0,0.4)] backdrop-blur-sm sm:rounded-[2rem] sm:p-7 lg:p-8">
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+          <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-light sm:tracking-[0.28em]">
             Scripture focus
           </div>
-          <div className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-gold-light">
+          <div className="shrink-0 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-gold-light sm:tracking-[0.2em]">
             Cast On Stone
           </div>
         </div>
 
-        <div className={`relative min-h-[16rem] sm:min-h-[18rem] ${activeVerse.style}`} aria-live="polite">
+        <div className={`relative min-h-52 sm:min-h-56 ${activeVerse.style}`} aria-live="polite">
           <span>{displayedText}</span>
           <span
             className={`ml-1 inline-block h-[0.8em] w-[3px] align-middle bg-gold transition-opacity duration-200 ${
@@ -97,19 +97,20 @@ export default function VerseCarousel() {
           <div className="mt-2 font-display text-xl text-parchment sm:text-2xl">{activeVerse.reference}</div>
         </div>
 
-        <div className="mt-8 flex items-center gap-2">
+        {/* <div className="mx-auto mt-7 grid max-w-64 grid-cols-10 justify-items-center gap-x-1 gap-y-2 sm:mt-8" aria-label="Choose scripture">
           {verses.map((verse, index) => (
             <button
               key={verse.reference}
               type="button"
               aria-label={`Show verse ${index + 1}`}
               onClick={() => setActiveIndex(index)}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                index === activeIndex ? "w-10 bg-gold" : "w-2.5 bg-white/25 hover:bg-white/40"
+              aria-pressed={index === activeIndex}
+              className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                index === activeIndex ? "scale-125 bg-gold" : "bg-white/35 hover:bg-white/65"
               }`}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

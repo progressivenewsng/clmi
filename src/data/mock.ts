@@ -1,6 +1,7 @@
 // Mock data. In production this will be served from the /login-managed
 // backend (news, gallery, testimonies, publications) — see README for the
 // suggested data model.
+import founderImage from "../assets/clmiFounder.jpeg";
 
 export type Publication = {
   slug: string;
@@ -24,7 +25,7 @@ export const publications: Publication[] = [
     image:
       "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop",
     date: "June 14, 2026",
-    author: "Rev. Dr. Samuel Okonkwo",
+    author: "Folorunso S. Aluko",
     body: [
       "Every generation is entrusted with leaders who carry more than a title — they carry an assignment. This edition of Kingdom Testament Chronicles examines the political office not as a prize to be won, but as a post to be occupied faithfully.",
       "We trace the biblical pattern of Joseph, Daniel and Esther — believers who rose to public influence without losing their covenant identity — and ask what their example demands of leaders today.",
@@ -249,25 +250,19 @@ export const reviews: Review[] = [
 
 export const leadershipData = {
   president: {
-    name: "Rev. Dr. Samuel Okonkwo",
+    name: "Folorunso S. Aluko",
     title: "President & Founder",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop",
+    image: founderImage,
     bio: [
-      "Rev. Dr. Samuel Okonkwo founded Covenant Leadership Ministry International out of a conviction that leaders and politicians carry a divine mandate too often left unexamined.",
-      "He has spent over two decades mentoring public office holders and corporate executives, calling them back to a theology of leadership rooted in scripture.",
+      "Folorunso S. Aluko is the President of Covenant Leadership Ministry International (CLMI), a ministry committed to promoting exemplary and righteous leadership anchored in Kingdom principles.",
+      "Also, he is an Associate Pastor with Living Faith Church. He is passionate about soul-winning, spiritual growth, leadership development and advancing God's Kingdom. He is happily married and blessed with three lovely children.",
     ],
   },
   executiveCouncil: [
-    { name: "Pastor Ifeoma Balogun", role: "Vice President", image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=600&auto=format&fit=crop" },
-    { name: "Elder Chidi Nwafor", role: "General Secretary", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop" },
-    { name: "Deaconess Amaka Uche", role: "Treasurer", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop" },
-    { name: "Mr. Tunde Fashola", role: "Financial Secretary", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop" },
+    
   ],
   directors: [
-    { name: "Dr. Emeka Obi", role: "Director, Mercy Reach", image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=600&auto=format&fit=crop" },
-    { name: "Barr. Ngozi Eze", role: "Director, Leadership Development", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop" },
-    { name: "Hon. Grace Adeyemi", role: "Director, Believers in Politics", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop" },
+   
   ],
 };
 
@@ -296,7 +291,7 @@ export const ministries = {
   },
   believersInPolitics: {
     name: "Believers in Politics (BiP)",
-    tagline: "Reconciling politicians and public servants to God's agenda.",
+    tagline: "Reconciling our kind to God’s agenda",
     description:
       "Believers in Politics is CLMI's dedicated platform for politicians and public office holders, offering fellowship, prayer and scriptural grounding for the unique pressures of public life.",
     activities: [

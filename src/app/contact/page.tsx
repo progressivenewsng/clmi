@@ -3,17 +3,10 @@ import JoinForm from "@/components/JoinForm";
 
 const info = [
   { label: "Address", value: "Covenant House, 14 Aso Drive, Central Business District, Abuja, FCT, Nigeria" },
-  { label: "Phone", value: "+234 802 345 6789" },
+  { label: "Phone", value: "+234 707 309 2948, +234 705 892 4014" },
   { label: "Email", value: "info@clmiglobal.org" },
-  { label: "Fellowship", value: "Every 3rd Sunday, 5 – 7pm, across chapters" },
 ];
 
-const socials = [
-  { label: "Facebook", handle: "@CLMIGlobal" },
-  { label: "Instagram", handle: "@clmi_global" },
-  { label: "X (Twitter)", handle: "@CLMI_Global" },
-  { label: "YouTube", handle: "CLMI Global" },
-];
 
 export default function ContactPage() {
   return (
@@ -36,17 +29,6 @@ export default function ContactPage() {
                   <li key={i.label} className="border-l-2 border-gold pl-4">
                     <div className="text-[11px] font-semibold uppercase tracking-widest text-indigo">{i.label}</div>
                     <div className="mt-1 text-[14px] text-charcoal/80">{i.value}</div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-display text-xl font-semibold text-ink">Follow CLMI</h2>
-              <ul className="mt-5 space-y-3">
-                {socials.map((s) => (
-                  <li key={s.label} className="flex justify-between text-[14px]">
-                    <span className="text-charcoal/60">{s.label}</span>
-                    <span className="font-medium text-indigo">{s.handle}</span>
                   </li>
                 ))}
               </ul>
