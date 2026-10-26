@@ -3,16 +3,22 @@ import CopyField from "@/components/CopyField";
 
 const accounts = [
   {
-    currency: "Naira (NGN) Account",
-    bank: "First Bank of Nigeria",
-    name: "Covenant Leadership Ministry International",
-    number: "3012 4456 789",
+    currency: "Naira (NGN) Account One",
+    bank: "United Bank for Africa",
+    name: "CLMI",
+    number: "1027953175",
+  },
+  {
+    currency: "Naira (NGN) Account Two",
+    bank: "Guaranty Trust Bank",
+    name: "CLMI",
+    number: "3000739241",
   },
   {
     currency: "Dollar (USD) Domiciliary Account",
     bank: "Guaranty Trust Bank",
-    name: "Covenant Leadership Ministry International",
-    number: "0123 4567 891",
+    name: "CLMI",
+    number: "3000739351",
   },
 ];
 
