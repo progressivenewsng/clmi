@@ -5,6 +5,7 @@ export const runtime = "nodejs";
 
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const maxPdfSize = 50 * 1024 * 1024;
+const maxPageImageSize = 10 * 1024 * 1024;
 
 async function uploadFile(file: File, folder: string, contentType: string) {
   const extension = file.name.split(".").pop()?.toLowerCase() || "bin";
@@ -66,21 +67,61 @@ export async function POST(request: Request) {
   const payload = await request.formData();
   const title = typeof payload.get("title") === "string" ? String(payload.get("title")).trim() : "";
   const slug = typeof payload.get("slug") === "string" ? String(payload.get("slug")).trim() : "";
+  const rawType = String(payload.get("publicationType") || "ktc");
+  const publicationType = rawType === "leadership_nuggets" || rawType === "word_for_you" ? rawType : rawType === "ktc" ? "ktc" : null;
+  const verseText = String(payload.get("verseText") || "").trim();
+  const verseReference = String(payload.get("verseReference") || "").trim();
 
   const author = process.env.CLMI_DEFAULT_AUTHOR || "CLMI Editorial Team";
   const publicationDate = new Date().toISOString().slice(0, 10);
 
-  if (!title || !slug || !slugPattern.test(slug) || !author || !(payload.get("pdf") instanceof File)) {
-    return Response.json({ error: "Headline, valid slug, and a PDF are required." }, { status: 400 });
+  if (!publicationType || !title || !slug || !slugPattern.test(slug) || !author) {
+    return Response.json({ error: "A valid publication type, headline, and slug are required." }, { status: 400 });
   }
 
   try {
+    let pdfUrl: string | null = null;
+    let coverImageUrl: string | null = null;
+    let pageImageUrls: string[] = [];
+
+    if (publicationType === "word_for_you") {
+      const pageFiles = payload.getAll("pages").filter((entry): entry is File => entry instanceof File && entry.size > 0);
+      if (!pageFiles.length || !verseText || !verseReference) {
+        return Response.json({ error: "At least one image, the Bible verse, and its reference are required." }, { status: 400 });
+      }
+      if (pageFiles.length > 20) return Response.json({ error: "Upload no more than 20 images per edition." }, { status: 400 });
+      for (const pageFile of pageFiles) {
+        if (!["image/jpeg", "image/png", "image/webp"].includes(pageFile.type) || pageFile.size > maxPageImageSize) {
+          return Response.json({ error: "Each page must be a JPEG, PNG, or WebP image no larger than 10 MB." }, { status: 400 });
+        }
+      }
+      const supabase = createAdminClient();
+      pageImageUrls = await Promise.all(pageFiles.map((file) => uploadFile(file, "word-for-you/pages", file.type)));
+      coverImageUrl = pageImageUrls[0];
+      const { data, error } = await supabase.from("publications").insert({
+        title,
+        slug,
+        author,
+        publication_date: publicationDate,
+        publication_type: publicationType,
+        page_image_urls: pageImageUrls,
+        verse_text: verseText,
+        verse_reference: verseReference,
+        cover_image_url: coverImageUrl,
+        status: "draft",
+      }).select("id").single();
+      if (error) return Response.json({ error: error.code === "23505" ? "That slug is already in use." : error.message }, { status: 500 });
+      return Response.json({ id: data.id }, { status: 201 });
+    }
+
     const publicationFile = await uploadPdf(payload.get("pdf"));
     if (!publicationFile) return Response.json({ error: "A PDF is required." }, { status: 400 });
+    pdfUrl = publicationFile.pdfUrl;
+    coverImageUrl = publicationFile.coverImageUrl;
     const supabase = createAdminClient();
     const { data, error } = await supabase
       .from("publications")
-      .insert({ title, slug, author, publication_date: publicationDate, cover_image_url: publicationFile.coverImageUrl, pdf_url: publicationFile.pdfUrl, status: "draft" })
+      .insert({ title, slug, author, publication_date: publicationDate, publication_type: publicationType, cover_image_url: coverImageUrl, pdf_url: pdfUrl, status: "draft" })
       .select("id")
       .single();
 

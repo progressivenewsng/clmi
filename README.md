@@ -6,7 +6,7 @@ A complete marketing/content website for CLMI, built with **Next.js 16 (App Rout
 
 - **Home** — hero, president's welcome, ministries teaser, publications carousel, testimonies carousel
 - **About CLMI** (`/about`) — accordion: Who Are We, Vision & Mission, Our Mandate, Our Strategy, Aims & Objectives, Our Doctrinal Statement (+ link to Our Beliefs)
-- **Leadership** (`/leadership`) — accordion: President/Founder, Executive Council, Ministry Directors
+- **Leadership** (`/leadership`) — accordion: President/Founder, Board of Directors, Ministry Directors
 - **Our Beliefs** (`/beliefs`)
 - **Ministries** (`/ministries`) — accordion: Mercy Reach, Leadership Development, Believers in Politics
 - **Publications** (`/publications`, `/publications/[slug]`) — KTC accordion + dynamic detail pages (image/video/text/links)

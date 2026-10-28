@@ -8,6 +8,7 @@ export default async function PublicationsManagerPage() {
   const { data: publications, error } = await supabase
     .from("publications")
     .select("id, title, author, publication_date, status, updated_at")
+    .eq("publication_type", "ktc")
     .order("updated_at", { ascending: false });
 
   return (
@@ -24,6 +25,18 @@ export default async function PublicationsManagerPage() {
         </div>
       </header>
       <section className="px-6 py-10 lg:px-10">
+        <div className="mb-10 grid gap-4 md:grid-cols-2">
+          <Link href="/admin/publications/leadership-nuggets" className="border border-line bg-white/45 p-5 transition-colors hover:border-gold">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-indigo">PDF editions</p>
+            <h2 className="mt-2 font-display text-xl font-semibold text-ink">Leadership Nuggets</h2>
+            <p className="mt-1 text-[13px] text-charcoal/65">Manage uploads and publication status.</p>
+          </Link>
+          <Link href="/admin/publications/word-for-you" className="border border-line bg-white/45 p-5 transition-colors hover:border-gold">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-indigo">Image editions + scripture</p>
+            <h2 className="mt-2 font-display text-xl font-semibold text-ink">The Word for You</h2>
+            <p className="mt-1 text-[13px] text-charcoal/65">Manage image pages and Bible verses.</p>
+          </Link>
+        </div>
         {error ? (
           <div className="border-l-2 border-red-700 bg-red-50 px-4 py-3 text-[13px] text-red-800">Could not load publications. Check that the Supabase migration has been applied.</div>
         ) : publications?.length ? (

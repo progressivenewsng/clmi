@@ -5,19 +5,19 @@ const accounts = [
   {
     currency: "Naira (NGN) Account One",
     bank: "United Bank for Africa",
-    name: "CLMI",
+    name: "Convenant Leadership Ministry International",
     number: "1027953175",
   },
   {
     currency: "Naira (NGN) Account Two",
     bank: "Guaranty Trust Bank",
-    name: "CLMI",
+    name: "Convenant Leadership Ministry International",
     number: "3000739241",
   },
   {
     currency: "Dollar (USD) Domiciliary Account",
     bank: "Guaranty Trust Bank",
-    name: "CLMI",
+    name: "Convenant Leadership Ministry International",
     number: "3000739351",
   },
 ];

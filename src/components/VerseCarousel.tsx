@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { scriptures } from "@/data/scriptures";
 
 type Verse = {
@@ -71,9 +72,9 @@ export default function VerseCarousel() {
           <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-light sm:tracking-[0.28em]">
             Scripture focus
           </div>
-          <div className="shrink-0 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-gold-light sm:tracking-[0.2em]">
+          <Link href="/cast-on-stone" className="shrink-0 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-gold-light transition-colors hover:border-gold hover:bg-gold/20 sm:tracking-[0.2em]">
             Cast On Stone
-          </div>
+          </Link>
         </div>
 
         <div className={`relative min-h-52 sm:min-h-56 ${activeVerse.style}`} aria-live="polite">

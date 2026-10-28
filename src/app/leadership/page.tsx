@@ -36,7 +36,7 @@ const sections: AccordionSection[] = [
   },
   {
     id: "executive-council",
-    title: "Executive Council",
+    title: "Board of Directors",
     content: (
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {leadershipData.executiveCouncil.map((p) => (
@@ -64,7 +64,7 @@ export default function LeadershipPage() {
       <PageHero
         eyebrow="Leadership"
         title="The People Behind CLMI"
-        description="Meet the president, executive council and ministry directors stewarding CLMI's mandate."
+        description="Meet the president, Board of Directors and ministry directors stewarding CLMI's mandate."
       />
       <section className="relative overflow-hidden bg-parchment py-16">
         <div className="absolute right-8 top-16 hidden w-56 border-l-2 border-gold/50 pl-4 text-[12px] font-display italic leading-relaxed text-ink/45 lg:block">

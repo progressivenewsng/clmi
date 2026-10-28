@@ -47,6 +47,10 @@ export default async function PublicationsPage() {
       />
       <section className="relative overflow-hidden bg-parchment py-16">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <nav aria-label="Publication sections" className="mb-8 grid gap-3 sm:grid-cols-2">
+            <Link href="/publications/leadership-nuggets" className="border border-line bg-white/45 p-4 text-[12px] font-semibold uppercase tracking-widest text-indigo transition-colors hover:border-gold">Leadership Nuggets</Link>
+            <Link href="/publications/the-word-for-you" className="border border-line bg-white/45 p-4 text-[12px] font-semibold uppercase tracking-widest text-indigo transition-colors hover:border-gold">The Word for You</Link>
+          </nav>
           <Accordion sections={sections} />
         </div>
       </section>

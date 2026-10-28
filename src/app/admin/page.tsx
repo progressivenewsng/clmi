@@ -2,7 +2,9 @@ import Link from "next/link";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 const contentAreas = [
-  { label: "Publications", description: "Kingdom Testament Chronicles", href: "/admin/publications", accent: "text-gold" },
+  { label: "KTC", description: "Kingdom Testament Chronicles", href: "/admin/publications", accent: "text-gold" },
+  { label: "Leadership Nuggets", description: "PDF leadership editions", href: "/admin/publications/leadership-nuggets", accent: "text-indigo" },
+  { label: "The Word for You", description: "Image editions and scripture", href: "/admin/publications/word-for-you", accent: "text-gold" },
   { label: "News", description: "Updates, events and announcements", href: "/admin/news", accent: "text-indigo" },
   { label: "Testimonies", description: "Stories from the CLMI community", href: "/admin/testimonies", accent: "text-gold" },
   { label: "Reviews", description: "External endorsements and reviews", href: "/admin/reviews", accent: "text-indigo" },
@@ -63,7 +65,7 @@ export default async function AdminPage() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-indigo">Your workspace</p>
             <h2 className="mt-2 font-display text-2xl font-semibold text-ink">Choose a content area</h2>
           </div>
-          <span className="hidden text-[12px] text-charcoal/50 sm:block">Database connection next</span>
+          <span className="hidden text-[12px] text-charcoal/50 sm:block">Live content workspace</span>
         </div>
 
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">

@@ -29,7 +29,7 @@ const NAV: NavItem[] = [
     href: "/leadership",
     children: [
       { label: "President / Founder", href: "/leadership#president" },
-      { label: "Executive Council", href: "/leadership#executive-council" },
+      { label: "Board of Directors", href: "/leadership#executive-council" },
       { label: "Ministry Directors", href: "/leadership#directors" },
     ],
   },
@@ -47,7 +47,7 @@ const NAV: NavItem[] = [
     label: "Ministries",
     href: "/ministries",
     children: [
-      { label: "Mercy Reach", href: "/ministries#mercy-reach" },
+      { label: "Kingdom Care", href: "/ministries#mercy-reach" },
       { label: "Leadership Development", href: "/ministries#leadership-development" },
       { label: "Believers in Politics", href: "/ministries#believers-in-politics" },
     ],
@@ -55,13 +55,15 @@ const NAV: NavItem[] = [
   {
     label: "Publications",
     href: "/publications",
-    children: [{ label: "Kingdom Testament Chronicles (KTC)", href: "/publications" }],
+    children: [
+      { label: "Kingdom Testament Chronicles (KTC)", href: "/publications" },
+      { label: "Leadership Nuggets", href: "/publications/leadership-nuggets" },
+      { label: "The Word for You", href: "/publications/the-word-for-you" },
+      { label: "News", href: "/news" },
+      // { label: "Cast on Stone", href: "/cast-on-stone" },
+    ],
   },
-  { label: "News", href: "/news" },
-  { label: "Testimonies", href: "/testimonies" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Our Beliefs", href: "/beliefs" },
-  { label: "Cast on Stone", href: "/cast-on-stone" },
 ];
 
 export default function Navbar() {
@@ -104,13 +106,14 @@ export default function Navbar() {
           <Image
             src={logo}
             alt="CLMI logo"
-            width={70}
-            height={70}
+            width={90}
+            height={90}
             className="rounded-full "
           />
-          <span className="hidden font-display text-[15px] font-semibold tracking-wide text-parchment sm:block">
+
+          <span className="navbar-brand font-display font-semibold tracking-wide text-parchment">
             COVENANT LEADERSHIP
-            <span className="block text-[11px] font-body font-normal tracking-[0.2em]">
+            <span className="block tracking-[0.2em]">
               MINISTRY INTERNATIONAL
             </span>
           </span>
@@ -129,7 +132,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => toggleOpen(item.label)}
-                  className="flex items-center gap-1 px-3 py-2 text-[13px] font-medium tracking-wide text-parchment/85 transition-colors hover:text-gold-light"
+                  className="flex items-center gap-1 px-3 py-2 text-[15px] font-medium tracking-wide text-parchment/85 transition-colors hover:text-gold-light"
                 >
                   {item.label}
                   <svg width="10" height="10" viewBox="0 0 10 10" className="mt-px opacity-70">
@@ -139,7 +142,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   href={item.href ?? "#"}
-                  className="flex items-center gap-1 px-3 py-2 text-[13px] font-medium tracking-wide text-parchment/85 transition-colors hover:text-gold-light"
+                  className="flex items-center gap-1 px-3 py-2 text-[15px] font-medium tracking-wide text-parchment/85 transition-colors hover:text-gold-light"
                 >
                   {item.label}
                 </Link>

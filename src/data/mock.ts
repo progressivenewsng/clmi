@@ -9,6 +9,10 @@ export type Publication = {
   excerpt: string;
   image: string;
   pdfUrl?: string;
+  pageImageUrls?: string[];
+  publicationType?: "ktc" | "leadership_nuggets" | "word_for_you";
+  verseText?: string;
+  verseReference?: string;
   date: string;
   author: string;
   body: string[];
@@ -102,7 +106,7 @@ export const newsItems: NewsItem[] = [
     image:
       "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop",
     date: "July 5, 2026",
-    body: "Members across Lagos gathered on the third Sunday for prayer, worship and a message on righteous leadership from the CLMI executive council.",
+    body: "Members across Lagos gathered on the third Sunday for prayer, worship and a message on righteous leadership from the CLMI Board of Directors.",
   },
   {
     slug: "public-lecture-recap",
@@ -154,7 +158,7 @@ export const galleryItems: GalleryItem[] = [
   { id: "g1", image: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?q=80&w=900&auto=format&fit=crop", caption: "Delegates in worship at the National Convention" },
   { id: "g2", image: "https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=900&auto=format&fit=crop", caption: "Prayer session at the monthly fellowship" },
   { id: "g3", image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=900&auto=format&fit=crop", caption: "Mercy Reach outreach distribution day" },
-  { id: "g4", image: "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=900&auto=format&fit=crop", caption: "Executive council in session" },
+  { id: "g4", image: "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=900&auto=format&fit=crop", caption: "Board of Directors in session" },
   { id: "g5", image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=900&auto=format&fit=crop", caption: "Leadership development workshop" },
   { id: "g6", image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=900&auto=format&fit=crop", caption: "Believers in Politics roundtable" },
   { id: "g7", image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=900&auto=format&fit=crop", caption: "Public lecture attendees" },
@@ -256,7 +260,7 @@ type LeadershipPerson = {
 
 export const leadershipData = {
   president: {
-    name: "Folorunso S. Aluko",
+    name: "Pastor Folorunso S. Aluko",
     title: "President & Founder",
     image: founderImage,
     bio: [

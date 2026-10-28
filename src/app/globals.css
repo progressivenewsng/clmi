@@ -74,6 +74,16 @@ h4,
     background: linear-gradient(to right, transparent, var(--line), transparent);
 }
 
+.navbar-brand {
+    font-size: 12px;
+}
+
+@media (min-width: 640px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
+}
+
 .copy-btn {
     transition: transform 0.15s ease;
 }

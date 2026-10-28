@@ -23,9 +23,9 @@ function MinistryBody({ m }: { m: (typeof ministries)[keyof typeof ministries] }
 }
 
 const sections: AccordionSection[] = [
-  { id: "mercy-reach", title: "Mercy Reach", content: <MinistryBody m={ministries.mercyReach} /> },
-  { id: "leadership-development", title: "Leadership Development", content: <MinistryBody m={ministries.leadershipDevelopment} /> },
-  { id: "believers-in-politics", title: "Believers in Politics", content: <MinistryBody m={ministries.believersInPolitics} /> },
+  { id: "mercy-reach", title: "Kingdom Care/ Mercy Reach", content: <MinistryBody m={ministries.mercyReach} /> },
+  { id: "leadership-development", title: "Leadership Development/ Mentoring", content: <MinistryBody m={ministries.leadershipDevelopment} /> },
+  { id: "believers-in-politics", title: "Believers in Politics/ Outreaches", content: <MinistryBody m={ministries.believersInPolitics} /> },
 ];
 
 export default function MinistriesPage() {
